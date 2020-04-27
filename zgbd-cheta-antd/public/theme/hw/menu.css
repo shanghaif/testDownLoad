@@ -1,0 +1,15 @@
+/* hw theme */
+.layout .top-nav-header-index.hw {background-color: #1CC09F;}
+.ant-menu-hw, .ant-menu-hw .ant-menu-sub {color: #FEFEFE;background: #1CC09F;}
+.ant-menu-hw .ant-menu-item > a {color: #FEFEFE!important;}
+.layout .top-nav-header-index.hw .user-wrapper .action {color: #FEFEFE;}
+.sider.hw {background-color: #1CC09F;}
+.sider.hw .logo {background: #1CC09F;}
+.ant-menu.ant-menu-hw .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-hw .ant-menu-item-selected {background-color: #04a484!important;}
+.ant-menu-hw.ant-menu-inline, .ant-menu-hw.ant-menu-vertical, .ant-menu-hw.ant-menu-vertical-left, .ant-menu-hw.ant-menu-vertical-right {border-right: 0;}
+.ant-drawer.drawer-sider.hw .ant-drawer-content {background-color: #1CC09F;}
+/* cheta theme */
+.cheta-color {color: #1CC09F}
+.cheta-bg {background-color: #1CC09F}
+.cheta-bg-pa1 {background-color: rgba(28,192,159,0.1)}
+.cheta-border {border-color: #1CC09F}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <style>
+    html,
+    body,
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <title>水波纹扩散</title>
+  <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
+  <script src="https://webapi.amap.com/maps?v=1.4.14&key=b49afc481b73f03287ee94574094f889&plugin=AMap.CircleEditor"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=3jkpsQONO1TMU6ZIn36SajqClVd4Uk5M"></script>
+  <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+</head>
+<body>
+<div id="container" style="color: blue"></div>
+<script src="waves.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+  var defaltPoint=[116.480766, 39.932931];
+  var  zoom=14;
+  var map = new AMap.Map("container", {
+    resizeEnable: false,
+    center:defaltPoint ,
+    zoom: zoom
+  });
+  // let marker = new AMap.Marker({
+  //     icon: 'direct.png',
+  //     zIndex: 101,
+  //     map: this.map,
+  //     center: [116.433322, 39.900255]
+  // });
+  $(function () {
+
+    initLeiDaZoom();
+
+  });
+  //初始化水波纹动画
+  function initLeiDaZoom(){
+    var circles1_point_lng=defaltPoint[0]+0.015000;
+    var circles1_point_lat=defaltPoint[1]+0.014000;
+    circles1 = new CircleShow(zoom*100, 4,[circles1_point_lng, circles1_point_lat], {
+      fillColor: '#1fc315',
+      fillOpacity: 0.8
+    },'green2×10.png');
+    circles1.start(500, 2000); //水波圆开始
+    var circles2_point_lng=defaltPoint[0]-0.015000;
+    var circles2_point_lat=defaltPoint[1]+0.014500;
+    circles2 = new CircleShow(zoom*100, 4,[circles2_point_lng, circles2_point_lat], {
+      fillColor: '#257ad4',
+      fillOpacity: 0.8
+    },'blue2×10.png');
+    circles2.start(500, 2000); //水波圆开始
+    var circles3_point_lng=defaltPoint[0]-0.002000;
+    var circles3_point_lat=defaltPoint[1]-0.014000;
+    circles3 = new CircleShow(zoom*100, 4,[circles3_point_lng,circles3_point_lat], {
+      fillColor: '#dc442a',
+      fillOpacity: 0.8
+    },'red2×10.png');
+    circles3.start(500, 2000); //水波圆开始
+  }
+  //停止动画
+  function removeLeiDaZoom(){
+    circles1.stop();
+    circles2.stop();
+    circles3.stop();
+  }
+  // 地图进行缩放的时候监听该函数
+  AMap.event.addListener(map,'zoomend',function(){
+    removeLeiDaZoom();
+    initLeiDaZoom();
+    zoom=map.getZoom();
+  },);
+
+  AMap.plugin('AMap.Geolocation', function() {
+    var geolocation = new AMap.Geolocation({
+      enableHighAccuracy: false,//是否使用高精度定位，默认:true
+      timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+      // buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+      zoomToAccuracy: false,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+      buttonPosition: 'RB',
+      isConverted:true
+    });
+    // map.addControl(geolocation);
+    geolocation.getCurrentPosition();
+    AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+    AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+  });
+  //解析定位结果
+  function onComplete(data) {
+    // 定位信息解析成地址
+    // var marker = new AMap.Marker({
+    //     map:map,
+    //     bubble:true
+    // });
+    console.log(data);
+  }
+  function onError(data) {
+    console.log(data)
+  }
+</script>
+
+</body>
+</html>

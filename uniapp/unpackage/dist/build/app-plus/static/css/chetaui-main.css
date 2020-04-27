@@ -1,0 +1,62 @@
+/* 
+ cheta ui  
+ */
+.cheta-bg-white{
+	background: white;
+}
+.cheta-inline-block{
+	display: inline-block;
+}
+.cheta-block{
+	display: block;
+}
+
+.cheta-box-flex{
+	display: flex;
+}
+.cheta-flex1{
+	-webkit-flex: 1;
+	flex: 1;
+}
+.cheta-flex2{
+	-webkit-flex: 2;
+	flex: 2;
+}
+
+.cheta-button-primary{
+	background: rgba(74,207,154,1);
+	border-radius:41px;
+	text-align: center;
+	color: #FFF;
+	width: 100%;
+}
+body{
+	font-family:PingFang SC;
+	font-size:60rpx;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+
+.cheta-font20{
+	font-size:20rpx;
+}
+/* .cheta-font30{
+	font-size:30rpx;
+} */
+.cheta-font24{
+	font-size:24rpx;
+}
+.cheta-font40{
+	font-size:40rpx;
+	
+}
+
+/* .cheta-font60{
+	font-size:30px;
+} */
+.cheta-font-bold{
+	font-weight:bold;
+}
+.cheta-font-grey{
+	color:rgba(153,153,153,1);
+}

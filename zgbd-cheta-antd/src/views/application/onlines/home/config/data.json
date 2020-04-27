@@ -1,0 +1,20 @@
+{
+  "category": [
+    {"title": "首页", "size": 10, "children": [
+      {"componentName": "TopTopTop","image": "http://www.zgjiuan.cn/file/cheta/17cce32946a744ee97f953fad14d2331.png","title": "导航栏", "span": 12,"configName": "TopTopTopData"},
+      {"componentName": "TopTopBody","image": "http://www.zgjiuan.cn/file/cheta/0c64cb0351ce401191e12cade67c0dd9.png","title": "二级菜单", "span": 12,"configName": "TopTopBodyData"},
+      {"componentName": "TopTopFoot","image": "http://www.zgjiuan.cn/file/cheta/96a2d8cf010549d0bd1be976f0adef7e.png","title": "首页TopFoot", "span": 12,"configName": "TopTopFootData"},
+
+      {"componentName": "TopBodyTop","image": "http://www.zgjiuan.cn/file/cheta/51c01b27e89c4f03a18ede197b13ce3b.png","title": "首页BodyTop", "span": 12,"configName": "TopBodyTopData"},
+      {"componentName": "TopBodyBody","image": "http://www.zgjiuan.cn/file/cheta/859243f52f0e4fd4b64fc6d0d0e06991.jpg","title": "首页BodyBody", "span": 12,"configName": "TopBodyBodyData"},
+      {"componentName": "TopBodyFoot","image": "http://www.zgjiuan.cn/file/cheta/1a98e3dcc87d4848a151b90fc1bcb36d.png","title": "首页BodyFoot", "span": 12,"configName": "TopBodyFootData"},
+      {"componentName": "TopBodyFootSonThree","image": "http://www.zgjiuan.cn/file/cheta/885cdd22df18480392ad7ce598f5c843.png","title": "首页BodyFoot", "span": 12,"configName": "TopBodyFootSonThreeData"},
+
+
+      {"componentName": "TopFootTop","image": "http://www.zgjiuan.cn/file/cheta/84a647f642464baf9fd7d6bce1660eaf.png","title": "首页FootTop","span": 12,"configName": "TopFootTopData"},
+      {"componentName": "TopFootBody","image": "http://www.zgjiuan.cn/file/cheta/09b59c7aff9245098982d568652a496b.png","title": "首页FootBody", "span": 12,"configName": "TopFootBodyData"},
+      {"componentName": "TopFootFoot","image": "http://www.zgjiuan.cn/file/cheta/b9c0add4ba224b7d93684ac4b93fb47a.png","title": "首页FootFoot", "span": 12,"configName": "TopFootFootData"}
+
+    ]}
+  ]
+}

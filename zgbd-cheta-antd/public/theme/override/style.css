@@ -1,0 +1,24 @@
+/* 维修 */
+.mobile .repair {padding: 10px;}
+.repair .ant-table-tbody .ant-table-expanded-row td:first-child{display: none;}
+.repair .ant-table-tbody .ant-table-row td:first-child{display: none;}
+.repair .ant-table-thead tr th:first-child{
+  display: none;
+}
+.repair .ant-table-tbody .ant-table-expanded-row td:last-child{padding: 0px;}
+.clearfix:after{
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* logo样式 */
+.logo .pc div{background-color: #1CC09F;}
+.logo .endlong div{background-color: #1CC09F;}
+
+/* logo样式 */
+.logo .pc img{background-color: #1CC09F;}
+.logo .endlong img{background-color: #1CC09F;}

@@ -1,0 +1,65 @@
+{
+  "category": [
+    {"title": "保养管理", "size": 8, "children": [
+      {"componentName": "MaintenanceSonOne","image": "http://www.zgjiuan.cn/file/cheta/2111ab0c5131417998ebc5dfebf13418.png","title": "保养指数", "span": 12,"configName": "MaintenanceSonOneData"},
+      {"componentName": "MaintenanceSonTwo","image": "http://www.zgjiuan.cn/file/cheta/e632ac15b33b470a8e6df71277c594ab.png","title": "在保车辆数", "span": 12,"configName": "MaintenanceSonTwoData"},
+      {"componentName": "MaintenanceSonThree","image": "http://www.zgjiuan.cn/file/cheta/ace65ab4871c44b89a21b504ba1ef227.png","title": "推荐保养车辆", "span": 12,"configName": "MaintenanceSonThreeData"},
+      {"componentName": "MaintenanceSonFive","image": "http://www.zgjiuan.cn/file/cheta/88471add2bdc452fa2d71402e6d6256d.png","title": "未投保统计", "span": 12,"configName": "MaintenanceSonFiveData"},
+      {"componentName": "MaintenanceTableThree","image": "http://www.zgjiuan.cn/file/cheta/5a763a09602c4b26a6a5f2e313363277.png","title": "年审提醒", "span": 12,"configName": "MaintenanceTableThreeData"},
+      {"componentName": "MaintenanceSonSix","image": "http://www.zgjiuan.cn/file/cheta/0d26eb321e0845908f08a4c7a2e712fc.png","title": "即将到期", "span": 12,"configName": "MaintenanceSonSixData"},
+      {"componentName": "MaintenanceTop","image": "http://www.zgjiuan.cn/file/cheta/0d26eb321e0845908f08a4c7a2e712fc.png","title": "即将到期", "span": 12,"configName": "MaintenanceTopData"},
+      {"componentName": "InsuranceSonThree","image": "http://www.zgjiuan.cn/file/cheta/ba07839a163f406cbabd1bb8cd58d51e.png","title": "轮播图", "span": 12,"configName": "InsuranceSonThreeData"}
+    ]},
+    {"title": "表单", "size": 3, "children": [
+      {"componentName": "FormElement","image": "http://file.terrybg.com/cheta/beca0340983245f4bf5bfa36dbdd02c4.png","title": "FormDemo ", "span": 12,"configName": "FormElementData"}
+    ]},
+    {"title": "加油管理", "size": 1, "children": [
+      {"componentName": "OilCar","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "加油管理模块", "span": 12,"configName": "OilCarDate"},
+      {"componentName": "Navigation","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "加油导航", "span": 12,"configName": "NavigationDate"},
+      {"componentName": "OilPriceBlock","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "今日油价模块", "span": 12,"configName": "OilPriceBlockDate"},
+      {"componentName": "OilPrice","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "今日油价", "span": 12,"configName": "OilPriceDate"},
+      {"componentName": "NewlyAdded","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "新增记录", "span": 12,"configName": "NewlyAddedDate"},
+      {"componentName": "Ring","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "油卡管理", "span": 12,"configName": "RingDate"},
+      {"componentName": "Curve","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "曲线图", "span": 12,"configName": "CurveDate"},
+      {"componentName": "CurveWork","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "曲线图", "span": 12,"configName": "CurveWorkDate"},
+      {"componentName": "Public","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "标题", "span": 12,"configName": "PublicDate"},
+      {"componentName": "DatePicker","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "按钮 + 日期", "span": 12,"configName": "DatePickerDate"},
+      {"componentName": "Blank","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "底页", "span": 12,"configName": "BlankDate"},
+      {"componentName": "Select","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "选择", "span": 12,"configName": "SelectDate"}
+
+    ]},
+    {"title": "车审管理", "size": 1, "children": [
+      {"componentName": "DiversifTabs","image": "http://www.zgjiuan.cn/file/cheta/25e2ed4faa2140c493eb76adf81c0609.png","title": "标签页 ", "span": 12,"configName": "DiversifTabsData"}
+    ]},
+    {"title": "表格", "size": 2, "children": [
+      {"componentName": "List","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "列表", "span": 12,"configName": "ListData"},
+      {"componentName": "ListModif","image": "http://www.zgjiuan.cn/file/cheta/c7c4483983024fcaa8390059a4986848.png","title": "可修改列表", "span": 12,"configName": "ListModifData"}
+    ]},
+
+    {"title": "按钮", "size": 2, "children": [
+      {"componentName": "Search","image": "http://www.zgjiuan.cn/file/cheta/504d821e67a5419082d9fc38cb6dbeaa.png","title": "搜索框Search", "span": 12,"configName": "SearchData"},
+      {"componentName": "ButtonOne","image": "http://www.zgjiuan.cn/file/cheta/504d821e67a5419082d9fc38cb6dbeaa.png","title": "选择搜索框", "span": 12,"configName": "ButtonOneData"},
+      {"componentName": "ButtonTwo","image": "http://www.zgjiuan.cn/file/cheta/504d821e67a5419082d9fc38cb6dbeaa.png","title": "按钮", "span": 12,"configName": "ButtonTwoData"}
+    ]},
+    {"title": "车审管理", "size": 6, "children": [
+      {"componentName": "ViolationSonOne","image": "http://www.zgjiuan.cn/file/cheta/25e2ed4faa2140c493eb76adf81c0609.png","title": "违规金额查询 ", "span": 12,"configName": "ViolationSonOneData"},
+      {"componentName": "ViolationSonTwo","image": "http://www.zgjiuan.cn/file/cheta/f570fc362a59454482a52455efc2374c.png","title": "事故数 ", "span": 12,"configName": "ViolationSonTwoData"},
+      {"componentName": "ViolationSonThree","image": "http://www.zgjiuan.cn/file/cheta/ece6fb8247f34d1cb3ab99cdc6c0ce25.png","title": "逾期未审", "span": 12,"configName": "ViolationSonThreeData"},
+      {"componentName": "InsuranceSonThree","image": "http://www.zgjiuan.cn/file/cheta/0fcd8f077d93442ea325f965b14ff341.png","title": "轮廓图 ", "span": 12,"configName": "InsuranceSonThreeData"},
+      {"componentName": "ViolationSonFour","image": "http://file.terrybg.com/cheta/03b80e130cf34af199544df79eac3a40.png","title": "面积图 ", "span": 12,"configName": "ViolationSonFourData"},
+      {"componentName": "ListThree","image": "http://file.terrybg.com/cheta/0ae02eed28444c0cb3afab5494adf822.png","title": "列表", "span": 12,"configName": "ListThreeData"}
+
+    ]},
+
+    {"title": "卡片", "size": 2, "children": [
+      {"componentName": "Card","image": "http://www.zgjiuan.cn/file/cheta/d20347be13c340be8409c858e9f0e528.png","title": "上牌-卡片", "span": 12,"configName": "CardData"},
+      {"componentName": "CardOne","image": "http://www.zgjiuan.cn/file/cheta/4862c92e8f8a43279c306a40da7ec083.png","title": "车辆信息-卡片", "span": 12,"configName": "CardOneData"}
+    ]},
+    {"title": "列表", "size": 3, "children": [
+      {"componentName": "ListOne","image": "http://www.zgjiuan.cn/file/cheta/af2c382ab811473a8520662f0719dae8.png","title": "车基本信息", "span": 12,"configName": "ListOneData"},
+       {"componentName": "ListTwo","image": "http://www.zgjiuan.cn/file/cheta/9e8ddc41ab0c4ce089b47e87e3d39d99.png","title": "入网安全", "span": 12,"configName": "ListTwoData"},
+      {"componentName": "ListRepair","image": "http://www.zgjiuan.cn/file/cheta/af2c382ab811473a8520662f0719dae8.png","title": "维修项目信息", "span": 12,"configName": "ListRepairData"},
+      {"componentName": "ButtonOne","image": "http://www.zgjiuan.cn/file/cheta/ba07839a163f406cbabd1bb8cd58d51e.png","title": "轮播图", "span": 12,"configName": "ButtonOneData"}
+    ]}
+  ]
+}

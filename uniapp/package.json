@@ -1,0 +1,28 @@
+{
+  "uni-app": {
+    "scripts": {
+      "mp-dingtalk": {
+        "title": "钉钉小程序",
+        "env": {
+          "UNI_PLATFORM": "mp-alipay"
+        },
+        "define": {
+          "MP-DINGTALK": true
+        }
+      }
+    }
+  },
+  "name": "uniapp",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/uni-app": "^1.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

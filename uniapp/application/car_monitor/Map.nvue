@@ -1,0 +1,391 @@
+<template>
+	<view class="content" :style="{width:screenWidth + 'px',height:screenHeight + 'px'}">
+		<map class="map" id="map1" ref="map1" :style="{width:screenWidth + 'px',height:screenHeight + 'px'}" :longitude="longitude" :latitude="latitude" :markers="carList">
+			<cover-view class="bwidth">
+				<uni-nav-bar
+					left-icon="arrowleft"
+					:fixed="true"
+					:status-bar="true"
+					color="#999"
+					background-color="#fff"
+					@clickLeft="back">
+					<view class="sousuo" @click="getSearch">
+						<uni-search-bar @confirm="search" @input="input" radius="20" ></uni-search-bar>
+					</view>
+				</uni-nav-bar>
+				<view class="carthreeicon cheta-flex-item">
+					<view class="cheta-flex-item" @click="getCarRun()">
+						<image class="carthreeimg" src="/static/img/carnitor/runcar.png" alt="" />
+						<view class="chata-icon-size">
+							<text class="num">{{ carDigit.lineSum}}</text>
+							<text class="sizex">运行车</text>
+						</view>
+					</view>
+					<view class="cheta-flex-item" @click="getCarStop()">
+						<image class="carthreeimg" src="/static/img/carnitor/stopcolor.png" alt="" />
+						<view class="chata-icon-size">
+							<text class="num">{{ carDigit.stopSum}}</text>
+							<text class="sizex">停止车</text>
+						</view>
+					</view>
+					<view class="cheta-flex-item" @click="getCarOFFLINE()">
+						<image class="carthreeimg" src="/static/img/carnitor/outline.png" alt="" />
+						<view class="chata-icon-size">
+							<text class="num">{{ carDigit.travelSum}}</text>
+							<text class="sizex">离线车</text>
+						</view>
+					</view>
+				</view>
+			</cover-view>
+		</map>
+		<view class="cheta-bottom-frame" v-show="bottomDetail">
+			<text class="close" @click="close">×</text>
+			<view class="cheta-flex-item mb">
+				<view class="sizea">
+					<text class="carnum">{{carObject.registrationNo}}</text>
+					<text class="model">{{carObject.carType}}</text>
+				</view>
+				<view class="cheta-bottom-img">
+					<image class="carimage" src="/static/img/icon/bigcar.png" alt=""/>
+				</view>
+			</view>
+			<view class="cheta-flex-item mb">
+				<text class="timesize color">驾驶员: </text>
+				<text class="timesize">{{carObject.driverName || '未绑定'}}</text>
+				<text class="timesize color">上报时间: </text>
+				<text class="timesize">{{carObject.gt}}</text>
+			</view>
+			<view class="cheta-flex-item mb pg data">
+				<view>
+					<text class="bgsize" v-if="carObject.gs">{{carObject.gs.split("、")[0]}}</text>
+					<text class="color">状态(实时)</text>
+				</view>
+				<view>
+					<text class="bgsize">{{ direction }}</text>
+					<text class="color">方向(实时)</text>
+				</view>
+				<view>
+					<text class="bgsize">{{carObject.g}}</text>
+					<text class="color">里程(km/h)</text>
+				</view>
+			</view>
+			<view class="cheta-flex-item mb">
+				<text class="posi color">位置: {{ address }}</text>
+			</view>
+			<view class="cheta-flex-item data">
+				<view @click="getTrack">
+					<text class="bgsize cuIcon-locationfill"></text>
+					<text class="color ac">历史轨迹</text>
+				</view>
+				<view>
+					<text class="bgsize cuIcon-infofill"></text>
+					<text class="color ac">导航追车</text>
+				</view>
+				<view @click="moreMessage">
+					<text class="bgsize cuIcon-infofill"></text>
+					<text class="color ac">更多详情</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+<script>
+	const SystemInfo = uni.getSystemInfoSync();
+	import { getStatusSum,getCarDetailById } from '@/common/api.js'
+	import {gpsUtil} from '@/common/util.js'
+    let mapSearch = {};
+	try{
+		if (weex.requireModule) {
+			mapSearch = weex.requireModule('mapSearch')
+		}
+	}catch(e){
+	}
+	export default {
+		data() {
+			return {
+				screenWidth: SystemInfo.screenWidth,
+				screenHeight: SystemInfo.screenHeight,
+				latitude: 23.173282,
+				longitude: 113.574520,
+				bottomDetail:true,
+				carId:'',
+				carDigit:{},
+				carObject:{},
+				gpsUtil:gpsUtil,
+				direction:'',
+				terminalNum:'',
+				carList:[],
+				address:"",
+
+				// 定时器ID
+				intervalID: ''
+			}
+		},
+		onLoad (option) {
+			var $this = this
+			getStatusSum ().then(res=>{
+				if (res.success) {
+					$this.carDigit = res.result[0]
+				}
+			})
+			$this.carId = option.id
+			this.getData();
+			// 实时刷新
+			this.intervalID = setInterval(function(e){
+				e.getData();
+			}, 1000 * 20 , $this)
+		},
+		beforeDestroy(){
+			clearInterval(this.intervalID)
+		},
+		methods:{
+			getData () {
+				var $this = this
+				var param = {
+					id: this.carId
+				}
+				getCarDetailById ({data: param}).then(res=>{
+					if (res.success) {
+						$this.direction = $this.gpsUtil.angParse(res.result.ang)
+						$this.carObject =  res.result
+						$this.addCar(res.result)
+					}
+				})
+			},
+			addCar (carObject) {
+				var iconPath = '/static/img/carnitor/car_grey.png';
+				if (carObject.statusRun === 'TRAVEL') {
+					iconPath = '/static/img/carnitor/car_green.png'
+				} else if (carObject.statusRun === 'STOP') {
+					iconPath = '/static/img/carnitor/car_orange.png'
+				}
+				this.latitude = carObject.lat;
+				this.longitude = carObject.lng;
+				this.carList = [];
+				this.carList.push({
+					latitude:  carObject.lat,
+					longitude: carObject.lng,
+					iconPath: iconPath,
+					width: '50',
+				});
+				var $this = this;
+				mapSearch.reverseGeocode({
+					point: {
+						latitude: carObject.lat,
+						longitude: carObject.lng
+					}
+				}, ret => {
+					$this.address = ret.address;
+				})
+			},
+			getAddress () {
+				var $this = this
+				this.carList.forEach(inner=>{
+					var lng = inner.longitude
+					var lat = inner.latitude
+				})
+
+				},
+			getCarRun (){
+				uni.navigateTo({
+					url: '/application/car_monitor/car_monitor?statusRun=TRAVEL'
+				});
+			},
+			getCarStop () {
+				uni.navigateTo({
+					url: '/application/car_monitor/car_monitor?statusRun=STOP'
+				});
+			},
+			getCarOFFLINE () {
+				uni.navigateTo({
+					url: '/application/car_monitor/car_monitor?statusRun=OFF_LINE'
+				});
+			},
+			getSearch () {
+				uni.navigateTo({
+					url: '/application/car_monitor/car_monitor_search',
+				});
+			},
+			close(){
+				this.bottomDetail = false;
+			},
+			getTrack () {
+				uni.navigateTo({
+					url: '/application/car_monitor/ctrack?terminalNum=' + this.carObject.terminalNum + '&id=' + this.carObject.id + '&registrationNo=' + this.carObject.registrationNo
+				});
+			},
+			moreMessage () {
+				uni.navigateTo({
+					url: '/application/car_monitor/carMoreMessge?carId=' + this.carId,
+				});
+			},
+			back: function() {
+				uni.navigateBack({
+					delta: 1
+				});
+			},
+		},
+		onReady() {
+		    this.map = uni.createMapContext("map1", this);
+		},
+		gpsUtil () {
+			return gpsUtil;
+		},
+
+
+	}
+</script>
+<style scoped>
+	.cheta-flex-item{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.sousuobg{
+		width:750rpx;
+		padding-top:15rpx;
+		background-color: #fff;
+	}
+	.sslefticon{
+		width:60rpx;
+	}
+	.return{
+		width:40rpx;
+		height:40rpx;
+	}
+	.sousuo{
+		width:580rpx;
+	}
+	.color{color:#999999;}
+	.input-view {
+		/* #ifndef APP-PLUS-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		flex: 1;
+		background-color:rgba(255,255,255,.7);
+		height: 30rpx;
+		border-radius: 15rpx;
+		flex-wrap: nowrap;
+		margin-top: 7rpx;
+		margin-bottom:7rpx;
+		line-height: 30px;
+	}
+	.input-uni-icon {
+		line-height: 30rpx;
+	}
+	.nav-bar-input {
+		height: 30rpx;
+		line-height: 30rpx;
+		/* #ifdef APP-PLUS-NVUE */
+		width: 370rpx;
+		padding-left:5rpx;
+		padding-right:5rpx;
+		font-size: 28rpx;
+		background-color:rgba(255,255,255,.7);
+	}
+	.carthreeicon{
+		width:702rpx;
+		margin-top:10rpx;
+		margin-bottom:10rpx;
+		margin-left:22rpx;
+		background-color:rgba(255,255,255,.7);
+		height:120rpx;
+		padding-top:15rpx;
+		padding-bottom:15rpx;
+		padding-left:16rpx;
+		padding-right:16rpx;
+		border-radius: 20rpx;
+		display: flex;
+		justify-content: space-between;
+	}
+	.carthreeimg{
+		width:90rpx;
+		height:90rpx;
+		margin-right:15rpx;
+	}
+	.num{
+		color:#333;
+		font-weight: bold;
+		font-size:36rpx;
+		line-height: 54rpx;
+	}
+	.sizex{
+		color:#999;
+		font-size:24rpx;
+		line-height: 26rpx;
+	}
+	.cheta-bottom-frame{
+		position: fixed;
+		height:580rpx;
+		background-color: #fff;
+		padding-top:41rpx;
+		padding-right:43rpx;
+		padding-left:46rpx;
+		padding-bottom:44rpx;
+		border-top-right-radius: 30rpx;
+		border-top-left-radius: 30rpx;
+		left:0;
+		right:0;
+		bottom:0;
+	}
+	.close{
+		position:absolute;
+		right:20rpx;
+		top:20rpx;
+		font-size:60rpx;
+		line-height: 40rpx;
+		z-index:999;
+	}
+	.cheta-bottom-img{
+		margin-right:38rpx;
+		width:216rpx;
+		height:115rpx;
+	}
+	.carimage{width:216rpx;height:115rpx;}
+	.sizea{width:390rpx;}
+	.carnum{
+		font-size:38rpx;
+		font-weight: bold;
+		color: #333;
+		line-height: 58rpx;
+	}
+	.model{font-size:30rpx;}
+	.timesize{
+		font-size:30rpx;
+		line-height:92rpx;
+		/* margin-right:14rpx; */
+	}
+	.posi{
+		font-size:26rpx;
+		line-height:92rpx;
+	}
+	.data{
+		padding-left:20rpx;
+		padding-right:20rpx;
+	}
+	.bgsize{
+		font-size:40rpx;
+		line-height: 56rpx;
+		color:#333;
+		text-align: center;
+	}
+	.ac{text-align: center;}
+	.mb{
+		/* border-bottom:1px solid #e6e6e6; */
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color:#e6e6e6;
+	}
+
+
+
+    @font-face {
+        font-family: 'iconfont';
+        src: url('https://at.alicdn.com/t/font_865816_17gjspmmrkti.ttf') format('truetype');
+    }
+    .cheta-icon {
+        font-family: iconfont;
+        margin-left: 20rpx;
+    }
+</style>

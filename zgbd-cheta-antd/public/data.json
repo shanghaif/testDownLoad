@@ -1,0 +1,53 @@
+{
+  "category": [
+    {"title": "数据表格", "size": 1, "children": [
+      {"componentName": "TableA","image": "http://www.zgjiuan.cn/file/cheta/9086dba4b8ed48a6ab97c85058c78bce.png","title": "数据概览", "span": 12,"configName": "TableData"}
+    ]},
+    {"title": "信息展示", "size": 2, "children": [
+      {"componentName": "ComponentA","image": "http://www.zgjiuan.cn/file/cheta/bd25d0d84d8040dcb76ef6c537a28924.png","title": "数据概览", "span": 12,"configName": "AnalysisTopData"},
+      {"componentName": "ComponentC","image": "http://www.zgjiuan.cn/file/cheta/6e40c1739fc64f06be2a6dcaee76547b.png","title": "服务", "span": 12}
+    ]},
+    {"title": "图表", "size": 31, "children": [
+      {"componentName": "Bar","image": "http://www.zgjiuan.cn/file/cheta/4954d2d36ddb4a34a9b86e72f48ded2b.png","title": "简单柱状图", "span": 12, "category": "图表"},
+      {"componentName": "Bar2","image": "http://www.zgjiuan.cn/file/cheta/1da4460e0e234da49d28e8428c2ed871.png","title": "分组柱状图", "span": 12, "category": "图表"},
+      {"componentName": "Bar3","image": "http://www.zgjiuan.cn/file/cheta/c3e7c999f3f6471f9ab7ad367e13b7d2.png","title": "堆叠柱状图", "span": 12, "category": "图表"},
+      {"componentName": "Bar4","image": "http://www.zgjiuan.cn/file/cheta/462e37ca04024080be21f3bd3b68087c.png","title": "百分比堆叠柱状图", "span": 12, "category": "图表"},
+      {"componentName": "Bar5","image": "http://www.zgjiuan.cn/file/cheta/598065a6433c4b3eb37629fb86d75e90.png","title": "区间柱状图", "span": 12, "category": "图表"},
+      {"componentName": "Bar6","image": "http://www.zgjiuan.cn/file/cheta/89db28e078034ad6a98c8fbda9264bb0.png","title": "瀑布图", "span": 12, "category": "图表"},
+      {"componentName": "Bar7","image": "http://www.zgjiuan.cn/file/cheta/eafd15a1e867441291e122d9e9316b93.png","title": "直方图", "span": 12, "category": "图表"},
+      {"componentName": "Bar8","image": "http://www.zgjiuan.cn/file/cheta/4954d2d36ddb4a34a9b86e72f48ded2b.png","title": "层叠直方图", "span": 12, "category": "图表"},
+      {"componentName": "Bar9","image": "http://www.zgjiuan.cn/file/cheta/4954d2d36ddb4a34a9b86e72f48ded2b.png","title": "直方图范围", "span": 12, "category": "图表"},
+      {"componentName": "Bar10","image": "http://www.zgjiuan.cn/file/cheta/1f1d8a141467438e96d85fe44188b635.png","title": "基础条形图", "span": 12, "category": "图表"},
+      {"componentName": "Bar11","image": "http://www.zgjiuan.cn/file/cheta/8118d01d48234fddb5215470ea29cd54.png","title": "分组条形图", "span": 12, "category": "图表"},
+      {"componentName": "Bar12","image": "http://www.zgjiuan.cn/file/cheta/340bbfb3aa0f4460981d06242d2e8769.png","title": "堆叠条形图", "span": 12, "category": "图表"},
+      {"componentName": "Bar13","image": "http://www.zgjiuan.cn/file/cheta/f521230c376543ba99716fbfbe2092d4.png","title": "区间条形图", "span": 12, "category": "图表"},
+      {"componentName": "Bar14","image": "http://www.zgjiuan.cn/file/cheta/384729b8fdb543c08fbad2b212f9ac48.png","title": "示例1", "span": 12, "category": "图表"},
+      {"componentName": "Bar15","image": "http://www.zgjiuan.cn/file/cheta/8b1f05575006470c9547171f85830368.png","title": "示例2", "span": 12, "category": "图表"},
+      {"componentName": "Bar16","image": "http://www.zgjiuan.cn/file/cheta/afdcda13dc3f4424a0008169708235f4.png","title": "示例3", "span": 12, "category": "图表"},
+      {"componentName": "Bar17","image": "http://www.zgjiuan.cn/file/cheta/5e92ae1a8e7145c092522f8dcab5b94c.png","title": "示例4", "span": 12, "category": "图表"},
+      {"componentName": "Bar18","image": "http://www.zgjiuan.cn/file/cheta/250c69f35bd44cb1931d9a7ebdac918d.png","title": "示例5", "span": 12, "category": "图表"},
+      {"componentName": "Bar19","image": "http://www.zgjiuan.cn/file/cheta/5b7e39768fa14f378c578d2cab0abe38.png","title": "示例6", "span": 12, "category": "图表"},
+      {"componentName": "Bar20","image": "http://www.zgjiuan.cn/file/cheta/75fc40d28d8147749270c30990d08786.png","title": "示例7", "span": 12, "category": "图表"},
+      {"componentName": "Bar21","image": "http://www.zgjiuan.cn/file/cheta/5dc5c15eecf444dbbac5f88d4fba386a.png","title": "示例8", "span": 12, "category": "图表"},
+      {"componentName": "Bar22","image": "http://www.zgjiuan.cn/file/cheta/1b1e4bab032341fbbe5b17fa828b096d.png","title": "示例9", "span": 12, "category": "图表"},
+      {"componentName": "Bar23","image": "http://www.zgjiuan.cn/file/cheta/9578fdd977454172b75a409ef536db16.png","title": "示例10", "span": 12, "category": "图表"},
+      {"componentName": "Bar24","image": "http://www.zgjiuan.cn/file/cheta/ae638e496f1146879bc315049bbda994.png","title": "示例11", "span": 12, "category": "图表"},
+      {"componentName": "Bar25","image": "http://www.zgjiuan.cn/file/cheta/a25ae9fa74dd47a2aa574c4b25306f63.png","title": "示例12", "span": 12, "category": "图表"},
+      {"componentName": "Bar26","image": "http://www.zgjiuan.cn/file/cheta/9e1277de5a5f4e3198cdde47fce2e79b.png","title": "示例13", "span": 12, "category": "图表"},
+      {"componentName": "Bar27","image": "http://www.zgjiuan.cn/file/cheta/147f06c73e644fc29ea53aad5d8a3c6c.png","title": "示例14", "span": 12, "category": "图表"},
+      {"componentName": "Bar28","image": "http://www.zgjiuan.cn/file/cheta/0e75314565014800aa93fa4908c37ab9.png","title": "示例15", "span": 12, "category": "图表"},
+      {"componentName": "Bar29","image": "http://www.zgjiuan.cn/file/cheta/2b08d259d2e5442f8aa867c0862c44a3.png","title": "示例16", "span": 12, "category": "图表"},
+      {"componentName": "Bar30","image": "http://www.zgjiuan.cn/file/cheta/447996f6c83c44e0b13effa4193a82fd.png","title": "示例17", "span": 12, "category": "图表"},
+      {"componentName": "Pie","image": "http://www.zgjiuan.cn/file/cheta/eb5d35f6eb1342a0b4edda7439bf1676.png","title": "饼图", "span": 12, "category": "图表"}
+    ]},
+    {"title": "表格", "size": 2, "children": [
+      {"componentName": "Table","image": "http://www.zgjiuan.cn/file/cheta/9086dba4b8ed48a6ab97c85058c78bce.png","title": "表格", "span": 12, "category": "表格"},
+      {"componentName": "Repair","image": "http://www.zgjiuan.cn/file/cheta/9086dba4b8ed48a6ab97c85058c78bce.png","title": "流程表格", "span": 12, "category": "表格"}
+    ]}
+  ],
+
+
+  "contentDemo": [
+    {"componentName": "ComponentA","image": "http://www.zgjiuan.cn/file/cheta/bd25d0d84d8040dcb76ef6c537a28924.png","title": "数据概览", "span": 12}
+  ]
+}

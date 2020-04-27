@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"><!--
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />-->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=3aa20b3a840dcdff5b4d3e5b1864bba8"></script>
+    <script	type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=89faacaf1b844bb71d2a8e77fa794969&plugin=AMap.Geocoder,AMap.MouseTool,AMap.MarkerClusterer,AMap.Autocomplete,AMap.PlaceSearch"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <title>运行管理</title>
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom:11, //初始化地图层级
+        center: [116.397428, 39.90923]
+    });
+</script>
+</body>
+</html>
