@@ -27,7 +27,7 @@
     "md5": "^2.2.1",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.24.0",
     "vcolorpicker": "^0.1.8",
     "viser-vue": "^2.4.4",
     "vue": "^2.5.22",
